@@ -1,0 +1,88 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+.title {
+  color: rgb(85, 0, 0);
+  font-size: 100px;
+  justify-self: center;
+}
+.main-box {
+  display: flex;
+  background-color: rgb(236, 122, 122);
+  flex-wrap: wrap;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+.main-header {
+  background-color: rgb(226, 89, 89);
+  justify-content: center;
+  min-height: 100px;
+  min-width: 100vw;
+}
+
+.player-box {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 40vh;
+  min-width: 50vw;
+  border: 20px;
+  border-color: black;
+  background-color: rgb(136, 69, 69);
+  justify-content: space-evenly;
+}
+.round-counter {
+  font-size: 3em;
+  display: flex;
+  align-content: flex-end;
+  flex-direction: column;
+  color: rgb(85, 0, 0);
+}
+#roundNumber {
+  font-size: 2em;
+  color: antiquewhite;
+}
+.rock {
+  font-size: 50px;
+  align-self: flex-end;
+  color: antiquewhite;
+  background-color: rgb(46, 24, 24);
+}
+.paper {
+  font-size: 50px;
+  align-self: flex-end;
+  color: antiquewhite;
+  background-color: rgb(46, 24, 24);
+}
+.scissors {
+  font-size: 50px;
+  align-self: flex-end;
+  color: antiquewhite;
+  background-color: rgb(46, 24, 24);
+}
+.results {
+  font-size: 50px;
+  max-height: 50px;
+}
+.result {
+  color: antiquewhite;
+  font-size: 2em;
+}
+.scoreboard {
+  display: grid;
+  font-size: 3em;
+  color: rgb(85, 0, 0);
+  align-content: flex-start;
+}
+#humanScore {
+  color: antiquewhite;
+  font-size: 2em;
+}
+#computerScore {
+  color: antiquewhite;
+  font-size: 2em;
+}
