@@ -1,6 +1,7 @@
     let playerScore=0;
     let compScore=0;
-    function ComputerPlay()
+    let round=1;
+    function computerPlay()
     {
       let guess=Math.round((Math.random()*3)+1);
       let result="";
@@ -81,29 +82,71 @@
         }
 
       }
+      
       return result;
 
     }
     function game()
     {
-      let userChoice=""
-      let compChoice="";
-      for(let i=0;i<5;i++)
-      {
-        userChoice=window.prompt("PAPER,SCISSORS,OR ROCK?");
-        compChoice=ComputerPlay();
-        console.log(playRound(userChoice,compChoice));
+      
+      alert("you have started the game");rockButton=document.querySelector("#rock");
+      const paperButton=document.querySelector("#paper");
+      const scissorsButton=document.querySelector("#scissors");
+      const resultArea=document.querySelector('#result');
+      const humanScore=document.querySelector('#humanScore');
+      const computerScore=document.querySelector('#computerScore');
+      
+      roundNumber.textContent=round;
+      
+        
+        rockButton.addEventListener('click',()=>{
+          result=playRound("ROCK",computerPlay());
+          resultArea.textContent=result;
+          computerScore.textContent=compScore;
+          humanScore.textContent=playerScore;
+          round++;
+          roundNumber.textContent=round;
 
-      }
-      if(compScore>playerScore)
-      {
-        console.log("YOU LOSE BUDDY!");
-      }
-      else if(playerScore>compScore){
-        console.log("YOU WIN!");
-      }
-      else{
-        console.log("YOU DONE TIED");
-      }
+        })
+        paperButton.addEventListener('click',()=>{
+          result=playRound("PAPER",computerPlay());
+          resultArea.textContent=result;
+          computerScore.textContent=compScore;
+          humanScore.textContent=playerScore;
+          round++;
+          roundNumber.textContent=round;
+        })
+        scissorsButton.addEventListener('click',()=>{
+          result=playRound("SCISSORS",computerPlay());
+          resultArea.textContent=result;
+          computerScore.textContent=compScore;
+          humanScore.textContent=playerScore;
+          round++;
+          roundNumber.textContent=round;
+        })
+        if(round==5)
+        {
+          if(compScore>playerScore)
+          {
+            alert("YOU LOST");
+          }
+          else if(playerScore>compScore)
+          {
+            alert("YOU WON!");
+            
+          }
+          else{
+            alert("YOU TIED!")
+          }
+        }
+      
+        }
 
-    }
+      
+
+      
+    
+
+    
+    const startGame= document.querySelector('#start');
+    startGame.onclick=()=>game();
